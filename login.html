@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">🌱 Plant Exchange</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="plants.html">Plants</a>
+        <a href="register.html">Sign Up</a>
+      </nav>
+    </header>
+
+    <section class="featured">
+      <div class="plant-card" style="max-width: 450px; margin: auto">
+        <h2>🔐 Login</h2>
+
+        <form onsubmit="return demoLogin(event);">
+          <br />
+
+          <input type="email" id="email" placeholder="Email" required />
+
+          <br /><br />
+
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            required
+          />
+
+          <br /><br />
+
+          <button type="submit">Login</button>
+        </form>
+
+        <br />
+
+        <p id="message"></p>
+
+        <p>Don't have an account?</p>
+
+        <a href="register.html">Create Account</a>
+      </div>
+    </section>
+
+    <script>
+      function demoLogin(event) {
+        event.preventDefault();
+
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+
+        if (email === "amina@gmail.com" && password === "123456") {
+          document.getElementById("message").innerText =
+            "Login Successful! Welcome!";
+
+          document.getElementById("message").style.color = "green";
+
+          setTimeout(function () {
+            window.location.href = "dashboard.html";
+          }, 1500);
+        } else {
+          document.getElementById("message").innerText =
+            "Invalid Email or Password!";
+
+          document.getElementById("message").style.color = "red";
+        }
+
+        return false;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Add Plant</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">🌱 Plant Exchange</div>
+
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="plants.html">Plants</a>
+        <a href="dashboard.html">Dashboard</a>
+      </nav>
+    </header>
+
+    <section class="featured">
+      <div class="plant-card" style="max-width: 600px; margin: auto">
+        <h2>➕ Add Plant / Resource</h2>
+
+        <form
+          onsubmit="
+            alert('Demo: Plant added successfully!');
+            return false;
+          "
+        >
+          <p>Plant Name</p>
+          <input type="text" placeholder="Enter plant name" required />
+
+          <p>Category</p>
+          <select required>
+            <option value="">Select Category</option>
+            <option>Plant</option>
+            <option>Seed</option>
+            <option>Pot</option>
+            <option>Gardening Tool</option>
+          </select>
+
+          <p>Location</p>
+          <input type="text" placeholder="Enter location" required />
+
+          <p>Description</p>
+          <textarea placeholder="Write description..." required></textarea>
+
+          <p>Upload Image</p>
+          <input type="file" accept="image/*" />
+
+          <br /><br />
+
+          <button type="submit">🌱 Post Plant</button>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>

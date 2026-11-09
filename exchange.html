@@ -1,0 +1,55 @@
+
+    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exchange Request</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🌱 Plant Exchange</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="plants.html">Plants</a>
+        <a href="dashboard.html">Dashboard</a>
+    </nav>
+</header>
+
+<section class="featured">
+
+    <div class="plant-card" style="max-width:600px; margin:auto;">
+
+        <h2>🔄 Exchange Request</h2>
+
+        <form onsubmit="alert('Demo: Exchange request submitted!'); return false;">
+
+            <p>You Want</p>
+            <input type="text" value="Rose" readonly>
+
+            <p>Your Plant / Resource</p>
+            <select required>
+                <option value="">Select your plant</option>
+                <option>Aloe Vera</option>
+                <option>Cactus</option>
+                <option>Mango Plant</option>
+            </select>
+
+            <p>Message</p>
+            <textarea placeholder="Write your message..." required></textarea>
+
+            <br><br>
+            <button type="submit">📤 Send Exchange Request</button>
+
+        </form>
+
+    </div>
+
+</section>
+
+</body>
+</html>

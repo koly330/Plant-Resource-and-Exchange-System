@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Available Plants</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">🌱 Plant Exchange</div>
+
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="plants.html">Plants</a>
+        <a href="care-tips.html">Care Tips</a>
+        <a href="dashboard.html">Dashboard</a>
+      </nav>
+    </header>
+
+    <section class="featured">
+      <h2>🌿 Available Plants & Resources</h2>
+
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search plant..." />
+        <button type="button" onclick="searchPlants()">🔍 Search</button>
+      </div>
+
+      <p id="noResult" style="display: none; text-align: center">
+        No plant found!
+      </p>
+
+      <div class="plant-container">
+        <div class="plant-card">
+          <div class="plant-image">
+            <img src="images/rose.jpg" alt="Rose Plant" />
+          </div>
+          <h3>Rose</h3>
+          <p>Category: Flower</p>
+          <p>Location: Sylhet</p>
+          <button onclick="location.href = 'details.html'">View Details</button>
+        </div>
+
+        <div class="plant-card">
+          <div class="plant-image">
+            <img src="images/cactus.jpg" alt="Cactus" />
+          </div>
+          <h3>Cactus</h3>
+          <p>Category: Indoor</p>
+          <p>Location: Sylhet</p>
+          <button onclick="location.href = 'details.html'">View Details</button>
+        </div>
+
+        <div class="plant-card">
+          <div class="plant-image">
+            <img src="images/aloe-vera.jpg" alt="Aloe Vera" />
+          </div>
+          <h3>Aloe Vera</h3>
+          <p>Category: Medicinal</p>
+          <p>Location: Beanibazar</p>
+          <button onclick="location.href = 'details.html'">View Details</button>
+        </div>
+
+        <div class="plant-card">
+          <div class="plant-image">
+            <img src="images/sunflower.jpg" alt="Sunflower" />
+          </div>
+          <h3>Sunflower</h3>
+          <p>Category: Flower</p>
+          <p>Location: Sylhet</p>
+          <button onclick="location.href = 'details.html'">View Details</button>
+        </div>
+
+        <div class="plant-card">
+          <div class="plant-image">
+            <img src="images/mango.jpg" alt="Mango Plant" />
+          </div>
+          <h3>Mango Plant</h3>
+          <p>Category: Fruit</p>
+          <p>Location: Sylhet</p>
+          <button onclick="location.href = 'details.html'">View Details</button>
+        </div>
+
+        <div class="plant-card">
+          <div class="plant-image">
+            <img src="images/plant-pot.jpg" alt="Plant Pot" />
+          </div>
+          <h3>Plant Pot</h3>
+          <p>Category: Gardening Resource</p>
+          <p>Location: Beanibazar</p>
+          <button onclick="location.href = 'details.html'">View Details</button>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      function searchPlants() {
+        let input = document
+          .getElementById("searchInput")
+          .value.trim()
+          .toLowerCase();
+
+        let cards = document.querySelectorAll(".plant-container .plant-card");
+
+        let found = false;
+
+        cards.forEach(function (card) {
+          let plantName = card
+            .querySelector("h3")
+            .textContent.trim()
+            .toLowerCase();
+
+          if (plantName.includes(input)) {
+            card.style.display = "";
+            found = true;
+          } else {
+            card.style.display = "none";
+          }
+        });
+
+        document.getElementById("noResult").style.display = found
+          ? "none"
+          : "block";
+      }
+
+      document
+        .getElementById("searchInput")
+        .addEventListener("input", searchPlants);
+    </script>
+  </body>
+</html>
